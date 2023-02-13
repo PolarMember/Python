@@ -4,8 +4,8 @@ from itertools import product
 def findPassword(chars, function, show=50, format_="%s"):
 
     password = None
-    attempts = 0
-    size = 1
+    attempts = 00
+    size = 01
     stop = False
 
     while not stop:
@@ -64,7 +64,6 @@ if __name__ == "__main__":
     pw = input("\n Type a password: ")
     print("\n")
 
-
     def testFunction(password):
         global pw
         if password == pw:
@@ -72,14 +71,15 @@ if __name__ == "__main__":
         else:
             return False
 
-
     # Obtém os dígitos que uma senha pode ter
     chars = getChars()
 
     t = time.process_time()
 
     # Obtém a senha encontrada e o múmero de tentativas
-    password, attempts = findPassword(chars, testFunction, show=1000, format_=" Trying %s")
+    password, attempts = findPassword(
+        chars, testFunction, show=1000, format_=" Trying %s"
+    )
 
     t = datetime.timedelta(seconds=int(time.process_time() - t))
     input(f"\n\n Password found: {password}\n Attempts: {attempts}\n Time: {t}\n")
